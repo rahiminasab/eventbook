@@ -20,6 +20,8 @@ app.use(session({ secret: process.env.SESSION_SECRET }));
 app.use(passport.initialize());
 app.use(passport.session());
 
+var models = require("./models/models.server.js")();
+
 
 /// error handlers
 
