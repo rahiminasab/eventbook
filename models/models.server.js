@@ -7,7 +7,8 @@ module.exports = function() {
     mongoose.connect('mongodb://localhost/eventbook');
     
     var models = {
-        userModel: require('./user/user.model.server')()
+        userModel: require('./user/user.model.server')(),
+        eventModel: require('./event/event.model.server')()
     }
     return models;
 }

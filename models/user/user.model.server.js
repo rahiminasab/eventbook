@@ -12,19 +12,19 @@ module.exports = function () {
     };
     return api;
     
-    function createUser() {
-        
+    function createUser(user) {
+        return User.create(user);
     }
     
     function findAllUsers() {
-        
+        return User.find({});
     }
     
-    function findUserById() {
-        
+    function findUserById(userId) {
+        return User.findById(userId);
     }
     
-    function findFacebookUser() {
-        
+    function findFacebookUser(id) {
+        return User.findOne({"facebook.id": id});
     }
-}
+};

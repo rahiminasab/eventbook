@@ -3,7 +3,7 @@
         .module("Eventbook")
         .controller("LoginController", LoginController);
 
-    function LoginController() {
-
+    function LoginController(UserService) {
+        
     }
 })();
