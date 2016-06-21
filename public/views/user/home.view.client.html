@@ -1,5 +1,10 @@
-<div class="container">
-    <a class="btn btn-block btn-danger" ng-click="model.logout()">Logout</a>
-    <h3>Here is suggested events for you</h3>
-    <ng-include src="'./views/event/event-list.view.client.html'" />
-</div>
+<a class="btn btn-block btn-danger" ng-click="model.logout()">Logout</a>
+
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">All</a></li>
+    <li role="presentation"><a href="#/home/{{model.user._id}}/facebook">Facebook</a></li>
+    <li role="presentation"><a href="#">Suggested</a></li>
+</ul>
+
+<h3>Here is suggested events for you</h3>
+<ng-include src="'./views/event/event-list.view.client.html'" />

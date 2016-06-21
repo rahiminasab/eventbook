@@ -18,7 +18,8 @@ module.exports = function (app, models) {
     var facebookConfig = {
         clientID     : process.env.FACEBOOK_CLIENT_ID,
         clientSecret : process.env.FACEBOOK_CLIENT_SECRET,
-        callbackURL  : process.env.FACEBOOK_CALLBACK_URL
+        callbackURL  : process.env.FACEBOOK_CALLBACK_URL,
+        profileFields: ['id', 'displayName', 'events']
     };
 
     function serializeUser(user, done) {
@@ -44,7 +45,6 @@ module.exports = function (app, models) {
     passport.use(new FacebookStrategy(facebookConfig, facebookLogin));
 
     function facebookLogin(token, refreshToken, profile, done) {
-        console.log(user_events);
         userModel
             .findFacebookUser(profile.id)
             .then(

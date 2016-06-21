@@ -20,6 +20,14 @@
                 resolve: {
                     loggedIn: checkLoggedIn
                 }
+            })
+            .when("/home/:userID/facebook", {
+                template: "<h1> IN FACEBOOK </h1>",
+                controller: "FacebookController",
+                controllerAs: "model",
+                resolve: {
+                    loggedIn: checkLoggedIn
+                }
             });
         
         function checkLoggedIn(UserService, $location, $q, $rootScope) {
